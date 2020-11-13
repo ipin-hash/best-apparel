@@ -8,17 +8,78 @@
   
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
   
 </head>
 <body>
 
-  <!-- We're coming soon
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
-
-  Email Address -->
+  <div class="wraper">
+    <div class="container">
+      <main class="content">
+        <div class="logo-brand">
+          <figure>
+            <img src="./images/logo.svg" alt="logo">
+          </figure>
+        </div>
+        <div class="content-text">
+          <h2 class="title"><span>we're</span> coming soon</h2>
+          <p class="desc">Hello fellow shoppers! We're currently building our new fashion store. 
+            Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        </div>
+        <form id="form" action="#" >
+          <div class="inputBox">
+            <input type="text" placeholder="Email Addres" class="email" onkeydown="validasi()" >
+            <span id="text"></span>
+          </div>
+          <button type="submit" onclick="validasi()">
+            <figure>
+              <img src="./images/icon-arrow.svg" alt="icon icon-arrow">
+            </figure>
+          </button>
+        </form>
+      </main>
+      <div class="bg-image">
+        <figure class="hero">
+          <img src="./images/hero-desktop.jpg" alt="" class="desktop">
+          <img src="./images/hero-mobile.jpg" alt="" class="mobile">
+        </figure>
+      </div>
+    </div>
+  </div>
   
+
+  <script type="text/javascript">
+
+const validasi = (e) => {
+  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  const form = document.getElementById('form');
+  const email = document.querySelector('.email').value; 
+  const text =document.getElementById('text');
+
+  // console.log(email) 
+      if(email.match(pattern)){
+        form.classList.add('valid');
+        form.classList.remove('invalid');
+        text.innerHTML = ''
+      } else {
+        form.classList.add('invalid');
+        form.classList.remove('valid');
+        text.innerHTML = "Please provide a valid email"
+        text.style.color = "hsl(0, 93%, 68%)"
+      }
+      
+      if(email === "") {
+        form.classList.remove('valid');
+        form.classList.remove('invalid');
+        text.innerHTML = "";
+      }
+    };  
+
+
+  </script>
   
 </body>
 </html>
