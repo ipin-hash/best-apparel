@@ -1,3 +1,4 @@
+/* ------ GLOBAL CSS ------ */
 :root {
   --Desaturated-Red: hsl(0, 36%, 70%);
   --Soft-Red: hsl(0, 93%, 68%);
@@ -10,15 +11,25 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Josefin Sans', sans-serif;
-}
+
+  /* ------ BODY ------ */
+
+body { font-family: 'Josefin Sans', sans-serif; }
+
+
+
+  /* ------ HEADER ------ */
 
 header {
   position: absolute;
   margin-left: 8%;
   margin-top: 2em;
 }
+
+
+
+/* ------ CONTENT ------ */
+
 .container {
   display: flex;
   flex-direction: row;
@@ -35,17 +46,24 @@ main {
   background-position: center;
 }
 
+
+
+/* ------ FOTO ------ */
+
 .bg-image {
   width: 80%;
   height: 100vh;
   
 }
+
 figure.hero {   
   background-image: url(./images/hero-desktop.jpg);
   width: 100%;
   height: 100%;  
 }
 
+
+/* ------ CONTENT TEXT ------ */
 
 h2.title {
   font-size: 4.1em;
@@ -71,6 +89,9 @@ p.desc {
 
 .content-text { margin-bottom: 2em; }
 
+
+
+  /* ------ FORM ------ */
 
 form input {
   /* position: relative; */
@@ -103,7 +124,7 @@ flex-direction: row;}
   width: 22px;
   background-size: cover;
   z-index: 1000;
-  right: 19em;
+  right: 25em;
   top: 12px;
 }
 
@@ -119,16 +140,21 @@ button {
   background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
   position: absolute;
   transition: .4s ;
-  /* margin-right: 38px; */
   list-style: unset;
-  right: 15em;
+  right: 22em;
   outline-style: unset;
   border-radius: 30px;
 }
 
+
+
+
+  /* ------- RESPONSIVE ------ */
+
 @media (max-width: 375px ) {
   body {
     background-image: none ;
+
   }
   .container {
     position: relative;
@@ -139,56 +165,56 @@ button {
     height: auto;
     justify-content: flex-start;
   }
-  header {margin-left: 57px;}
-  figure.logo-brand{
-    width: 65%;
-  }
-  figure img.logo {width: 100%;}
+  header { margin-left: 57px; }
+  figure.logo-brand{ width: 65%; }
+  figure img.logo { width: 100%; }
   main {
     background-image: none;
+    height: fit-content;
     margin: 0;
     padding: 0;
+    margin-bottom: 3em;
   }
-    .bg-image {
-      width: 100%;
-      height: 250px;  
-      margin-top: 5em;
-    }
-    figure.hero {   
-      background-image: url(./images/hero-mobile.jpg);
-      width: 100%;
-      background-size: cover;
-    }
-
-    h2.title {
-      font-size: 2.5em;
-      letter-spacing: 7px;
-      text-align: center;
-      margin-bottom: .5em;
-      margin-top: 1.5em;
-      margin-left: 1em;
-      margin-right: 1em;
+  .bg-image {
+    height: 250px;  
+    width: 100%;
+    margin-top: 5em;
   }
-    p.desc {
-      color: var(--Desaturated-Red);
-      line-height: 1.7;
-      text-align: center;
-      font-size: 14px;
-      margin: 0 3em;
-      margin-bottom: .4em;    
+  figure.hero {   
+    background-image: url(./images/hero-mobile.jpg);
+    width: 100%;
+    background-size: cover;
   }
-    
-    
-    .content-text { margin-bottom: 2em; }
-  form{
-    justify-content: center;
-}
 
-    form input { width: 250px;}    
+  h2.title {
+    font-size: 2.5em;
+    letter-spacing: 7px;
+    text-align: center;
+    margin-bottom: .5em;
+    margin-top: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  p.desc {
+    color: var(--Desaturated-Red);
+    line-height: 1.7;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 3em;
+    margin-bottom: .4em;    
+  }
+  .content-text { margin-bottom: 2em; }
+  form{ justify-content: center; }
+  form input { width: 250px;}    
 
-    button {
-      width: 76px;
-      height: 45px;
-      right: 4em;
-    }    
+  button {
+    width: 76px;
+    height: 45px;
+    right: 4em;
+  }   
+  #form.invalid .inputBox:before {
+    height: 20px;
+    width: 20px;
+    right: 9em;
+  }
 }
